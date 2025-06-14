@@ -1,426 +1,968 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Anubhav Pandey</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <style>
-        body.light-mode {
-            background-color: rgb(189, 138, 21);
-            color: black;
-        }
-        body.dark-mode {
-            background-color: black;
-            color: white;
-        }
-        .mode-toggle {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            padding: 10px;
-            cursor: pointer;
-            background-color: #ccc;
-            border: none;
-            border-radius: 5px;
-        }
-    </style>
-    <body>
-        <div class="mobile-message">
-            Please use a bigger screen to display the content
-        </div>
-
-        <div class="desktop-content">
-            <div class="upper">
-                <div class="nav">
-                    <div class="left">
-                        <div class="nav-name"><a href="#about">Home</a></div>
-                        <div class="nav-name"><a href="#skills">Skills</a></div>
-                        <div class="nav-name"><a href="#projects">Projects</a></div>
-                        <div class="nav-name"><a href="https://drive.google.com/file/d/1jL8IhT5neyKKP-EYmikc7dwaLNrSdkjv/view?usp=sharing" target="_blank">Resume</a></div>
-                    </div>
-                    <div class="left">
-                        <div class="nav-name"><a href="#">Blog</a></div>
-                        <div class="nav-name"><a href="#contact">Contact</a></div>                            
-                    </div>
-                </div>
-
-                <div class="logo">
-                    <a href="" target=""><h1 class="logo-title">Anubhav Pandey</h1></a>
-                </div>
-
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anubhav Pandey - System Programmer & AI Enthusiast</title>
+    <meta name="description" content="Anubhav Pandey - System Programmer, Linux Kernel Developer, and AI Enthusiast. Computer Science student at IIT Delhi specializing in operating systems, parallel computing, and machine learning.">
+    <meta name="keywords" content="Anubhav Pandey, System Programming, Linux Kernel, Machine Learning, AI, Operating Systems, IIT Delhi, Computer Science">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Anubhav Pandey - System Programmer & AI Enthusiast">
+    <meta property="og:description" content="Computer Science student at IIT Delhi specializing in Linux kernel development, parallel computing, and artificial intelligence systems.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://koderap.github.io">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Analytics (optional) -->
+    <!-- Add your Google Analytics or other tracking code here -->
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="#" class="brand-link">
+                    <span class="brand-text">Anubhav Pandey</span>
+                </a>
             </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
 
-            <div class="content">
-                <div class="about" id="about">
-                    <div class="intro">
-                        <h1 class="intro-head">About Me</h1>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+            <div class="hero-particles"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="highlight">Anubhav Pandey</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        I'm a <span class="typewriter">System Programmer</span>
+                    </p>
+                    <p class="hero-description">
+                        Computer Science student at IIT Delhi passionate about building robust systems 
+                        from the ground up. I specialize in Linux kernel development, parallel computing, 
+                        and machine learning systems.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#experience" class="btn btn-primary smooth-scroll">
+                            <i class="fas fa-rocket"></i>
+                            View My Work
+                        </a>
+                        <a href="https://drive.google.com/uc?export=download&id=14AIJ9Ne8GtzcBC00yKzh8bkPx2_Y8CnE" target="_blank" rel="noopener" class="btn btn-secondary">
+                            <i class="fas fa-download"></i>
+                            Download Resume
+                        </a>
+                    </div>
+                    
+                    <div class="hero-social">
+                        <a href="https://github.com/koderAP" target="_blank" rel="noopener" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/anubhavpandeyiitd/" target="_blank" rel="noopener" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:apiitb01@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://twitter.com/koderAP" target="_blank" rel="noopener" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <div class="profile-container">
+                        <div class="profile-image">
+                            <img src="images/whitebg.jpg" alt="Anubhav Pandey" class="profile-photo">
+                        </div>
+                        <div class="profile-decoration"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <div class="scroll-line"></div>
+                <span class="scroll-text">Scroll to explore</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">About Me</span>
+                <h2 class="section-title">System Programmer & Problem Solver</h2>
+                <p class="section-description">
+                    Computer Science student at IIT Delhi with deep expertise in systems programming, 
+                    parallel computing, and artificial intelligence research.
+                </p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3>System Programming</h3>
                         <p>
-                            About Me
-                            TL;DR: I’m passionate about understanding and building computer systems from the ground up. Outside of tech, I find joy in music and cricket.
-                            <br><br>
-                            Hi! I’m Anubhav Pandey, a Senior at IIT Delhi, majoring in Computer Science and Engineering. My academic and project experiences have taken me deep into the internals of operating systems, computer architecture, and large-scale machine learning systems. I love exploring how abstract ideas translate into real-world performance at the systems level.
-
-                            When I’m not immersed in debugging or experimenting with new technologies, you’ll find me engaging in creative music, playing cricket or trying out somthing new. I’m always curious about the broader world, especially topics at the intersection of technology, society, and global affairs.
-
-                            I’m eager to connect with like-minded peers, collaborate on impactful projects, or just talk about systems, AI, or art. Let’s connect and explore what we can build together. You can find my resume at: 
-                            <a href="https://drive.google.com/file/d/1jL8IhT5neyKKP-EYmikc7dwaLNrSdkjv/view?usp=sharing" target="_blank">Resume</a>
-
+                            Deep expertise in Linux kernel development, device drivers, and low-level 
+                            system programming. I've contributed to projects involving operating systems, 
+                            parallel computing, and performance optimization.
                         </p>
-                        <br><br>
-
                     </div>
-                    <div class="portrait-continer">
-                        <img src="./images/whitebg.jpg" class="portrait">
+                    
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI & Machine Learning</h3>
+                        <p>
+                            Developing intelligent solutions using machine learning and deep learning 
+                            techniques. From computer vision to game AI, I create AI-powered applications 
+                            that solve complex problems.
+                        </p>
                     </div>
-                </div>
-
-                <div id="skills"></div>
-                <div class="skills">
-                    <h1>Skills</h1>
-                    <div class="skill-details-container">
-                        <div class="skill-details">  
-                            <div class="languages">
-                                <h4>Languages</h4>
-                                <div class="skill-icons">
-                                    <div></div>
-                                    <div>
-                                        <img src="./images/skills/c.png" class="skill-icon">
-                                        <p>C</p>
-                                    </div>
-                                    <div>
-                                        <img src="./images/skills/c++.png" class="skill-icon">
-                                        <p>C++</p>
-                                    </div>
-                                    <div>
-                                        <img src="./images/skills/python.png" class="skill-icon">
-                                        <p>Python</p>
-                                    </div>
-                                    <div>
-                                        <img src="./images/skills/java.png" class="skill-icon">
-                                        <p>OCaml</p>
-                                    </div>
-                                    <div>
-                                        <img src="./images/skills/postgres.png" class="skill-icon">
-                                        <p>HTML/CSS</p>
-                                    </div>
-                                    <div></div>
-                                </div>
-                            </div>
-                            <div class="parallel">
-                                <h4>Parallel Computing</h4>
-                                <div class="skill-icons">
-                                    <div></div>
-                                    <div>
-                                        <img src="./images/skills/openmp.png" class="skill-icon">
-                                        <p>OpenMP</p>
-                                    </div>
-                                    <div>
-                                        <img src="./images/skills/mpi.png" class="skill-icon">
-                                        <p>MPI</p>
-                                    </div>
-                                    <!-- <div>
-                                        <img src="./images/skills/nvidia.png" class="skill-icon">
-                                        <p> CUDA</p>
-                                    </div> -->
-                                    <div></div>
-                                </div>
-                            </div>
+                    
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-network-wired"></i>
                         </div>
-
-                        <!-- <div class="skill-details">
-                            <div class="emb-cloud">
-                                <h4>Embedded and Cloud Computing</h4>
-                                <div class="skill-icons">
-                                    <div></div>
-                                    <div>
-                                        <img src="./images/skills/stm.png" class="skill-icon">
-                                        <p>Sensortile</p>
-                                    </div>
-                                    <div>
-                                        <img src="./images/skills/arduino.png" class="skill-icon">
-                                        <p>Arduino</p>
-                                    </div>
-                                    <div>
-                                        <img src="./images/skills/yocto.png" class="skill-icon">
-                                        <p>Yocto</p>
-                                    </div>
-                                    <div>
-                                        <img src="./images/skills/aws.png" class="skill-icon">
-                                        <p>AWS</p>
-                                    </div>
-                                    <div></div>
-                                </div>
-                            </div> -->
-
-                            <div class="software">
-                                <h4>OS/Software</h4>
-                                <div class="skill-icons">
-                                    <div></div>
-                                    <div>
-                                        <img src="./images/skills/linux.png" class="skill-icon">
-                                        <p>Linux</p>
-                                    </div>
-                                    <div>
-                                        <img src="./images/skills/git.png" class="skill-icon">
-                                        <p>Git</p>
-                                    </div>
-                                    <!-- <div>
-                                        <img src="./images/skills/matlab.png" class="skill-icon">
-                                        <p>Matlab</p>
-                                    </div> -->
-                                    <div></div>
-                                </div>
-                            </div>
+                        <h3>Parallel Computing</h3>
+                        <p>
+                            Specializing in high-performance computing, parallel algorithms, and distributed 
+                            systems. I work with technologies like OpenMP, MPI, and CUDA to maximize 
+                            computational efficiency.
+                        </p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-search"></i>
                         </div>
+                        <h3>Research Interests</h3>
+                        <p>
+                            My research focuses on operating systems optimization, memory management in kernel space, 
+                            and parallel computing architectures. Currently exploring efficient algorithms for 
+                            resource allocation in distributed systems and AI-driven system performance optimization.
+                        </p>
                     </div>
                 </div>
-
-                <div id="projects"></div>
-                <div class="projects" >
-                    <h1 class="projects-title">Projects</h1>
-
-                    <div class="projects-container">
-                        <div class="project-card">
-                            <img src="./images/projects/tux-2.jpg" alt="linux-kernel-tracker" loading="lazy" class="project-pic"/>
-                            <div class="details">    
-                                <h2 class="project-title">Linux Kernel Resource Usage Tracker & Limiter</h2>
-                                <p class="project-details">
-                                    This project was developed as part of the Operating Systems Course under the guidance of 
-                                    <a href="https://www.cse.iitd.ac.in/~srsarangi/" target="_blank">Prof. Smruti Ranjan Sarangi</a>. 
-                                    I modified the Linux Kernel source code to add a resource usage tracker and limiter for processes. 
-                                    The implementation introduces new system calls and kernel modules to monitor and enforce limits on heap memory usage and the number of open files for registered processes.
-                                    <br><br>
-                                    The project features real-time resource monitoring via <code>/proc/tracker_status</code>, automatic quota enforcement (processes exceeding limits are killed), robust cleanup using kprobes, and compatibility with both x86_64 and ARM64 architectures. 
-                                    The patch is provided for Linux kernel versions 6.1.6 and 6.13.4, with detailed documentation and a user-friendly interface for registration, fetching, and quota management.
-                                </p>
-                            </div>
-
-                            <a href="https://github.com/koderAP/Linux-Kernel-Resource-Tracker" target="_blank" class="btn">Check it Out</a>
-                        </div>
-
-                        <div class="project-card" >
-                            <img src="./images/projects/device-driver.png" alt="smart-block-device" loading="lazy" class="project-pic"/>
-                            <div class="details">    
-                                <h2 class="project-title">Smart Block Device Driver</h2>
-                                <p class="project-details">
-                                    A sophisticated Linux kernel module implementing a smart block device driver with advanced features. This project demonstrates deep understanding of kernel-level programming and block device management in Linux systems.
-                                    <br><br>
-                                    The driver implements intelligent caching mechanisms, performance optimization features, and robust error handling. Built using C and kernel APIs, this project showcases expertise in low-level systems programming and Linux kernel development, providing efficient block-level data management with enhanced performance characteristics.
-                                </p>
-                            </div>
-
-                            <a href="https://github.com/koderAP/Smart-Block-DeviceDriver" target="_blank" class="btn">Check it Out</a>
-                        </div>
-
-                        <div class="project-card" >
-                            <img src="./images/projects/ann.png" alt="havannah-ai" loading="lazy" class="project-pic"/>
-                            <div class="details">    
-                                <h2 class="project-title">Havannah Game AI</h2>
-                                <p class="project-details">
-                                    A sophisticated AI implementation for the strategic board game Havannah using advanced game theory algorithms. This project demonstrates deep understanding of artificial intelligence, game tree search algorithms, and strategic decision making.
-                                    <br><br>
-                                    The AI employs Monte Carlo Tree Search (MCTS), minimax algorithms with alpha-beta pruning, and heuristic evaluation functions to play Havannah at a competitive level. Built with Python, featuring performance optimizations and comprehensive game state analysis for intelligent move selection.
-                                </p>
-                            </div>
-
-                            <a href="https://github.com/koderAP/Havannah-Game-AI" target="_blank" class="btn">Check it Out</a>
-                        </div>
+                
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Projects Completed</div>
                     </div>
-
-                    <div class="projects-container">
-                        <div class="project-card" >
-                            <img src="./images/projects/tux.png" alt="linux-scheduler" loading="lazy" class="project-pic"/>
-                            <div class="details">    
-                                <h2 class="project-title">Linux Kernel Gang Scheduler</h2>
-                                <p class="project-details">
-                                    An advanced implementation of a gang scheduling algorithm for the Linux kernel, designed to improve performance for parallel applications by scheduling related processes simultaneously across multiple CPU cores.
-                                    <br><br>
-                                    This project involves deep kernel modifications to implement coordinated scheduling policies that ensure processes belonging to the same application run concurrently, reducing synchronization overhead and improving overall system throughput for multi-threaded workloads.
-                                </p>
-                            </div>
-
-                            <a href="https://github.com/koderAP/Linux-Kernel-Gang-Scheduler" target="_blank" class="btn">Check it Out</a>
-                        </div>
-
-                        <div class="project-card" >
-                            <img src="./images/projects/google-colour.png" alt="multi-tf-trader" loading="lazy" class="project-pic"/>
-                            <div class="details">    
-                                <h2 class="project-title">Multi-Timeframe Trading System</h2>
-                                <p class="project-details">
-                                    A comprehensive trading system that analyzes multiple timeframes simultaneously to generate trading signals. Built with modern web technologies including HTML, CSS, and JavaScript, featuring real-time data visualization and technical analysis tools.
-                                    <br><br>
-                                    The system implements various technical indicators, supports multiple asset classes, and provides an intuitive dashboard for traders to monitor positions across different timeframes. Features advanced charting capabilities and algorithmic trading signal generation.
-                                </p>
-                            </div>
-
-                            <a href="https://github.com/koderAP/MultiTF-Trader" target="_blank" class="btn">Check it Out</a>
-                        </div>
-
-                        <div class="project-card" >
-                            <img src="./images/projects/mergesort.jpg" alt="socket-programming" loading="lazy" class="project-pic"/>
-                            <div class="details">    
-                                <h2 class="project-title">Advanced Socket Programming in C++</h2>
-                                <p class="project-details">
-                                    A comprehensive implementation of network programming concepts using C++ sockets, demonstrating client-server architecture, concurrent connection handling, and advanced networking protocols.
-                                    <br><br>
-                                    The project includes implementations of TCP and UDP protocols, multi-threaded server designs, and efficient data serialization techniques. Features robust error handling, connection pooling, and performance optimization for high-throughput network applications.
-                                </p>
-                            </div>
-
-                            <a href="https://github.com/koderAP/Socket-programing-cpp" target="_blank" class="btn">Check it Out</a>
-                        </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Years Experience</div>
                     </div>
-
-                    <div class="projects-container">
-                        <div class="project-card" >
-                            <img src="./images/projects/interval.png" alt="sdn-ryu" loading="lazy" class="project-pic"/>
-                            <div class="details">    
-                                <h2 class="project-title">Software Defined Networks with Ryu</h2>
-                                <p class="project-details">
-                                    Implementation of congestion-aware networking solutions using Software Defined Networks (SDN) with the Ryu controller framework. This project demonstrates advanced networking concepts and traffic management strategies.
-                                    <br><br>
-                                    The system implements intelligent routing algorithms, real-time traffic monitoring, and dynamic flow control mechanisms to optimize network performance. Built with Python and OpenFlow protocols, featuring adaptive congestion control and network optimization algorithms.
-                                </p>
-                            </div>
-
-                            <a href="https://github.com/koderAP/SDN-with-ryu" target="_blank" class="btn">Check it Out</a>
-                        </div>
-
-                        <div class="project-card" >
-                            <img src="./images/projects/kws.jpg" alt="tcp-udp" loading="lazy" class="project-pic"/>
-                            <div class="details">    
-                                <h2 class="project-title">TCP-Like UDP Implementation</h2>
-                                <p class="project-details">
-                                    A custom implementation that adds TCP-like reliability features to UDP protocol, including acknowledgments, flow control, and congestion control mechanisms while maintaining UDP's performance advantages.
-                                    <br><br>
-                                    The project implements sliding window protocols, automatic repeat request (ARQ) mechanisms, and adaptive timeout strategies. Built in Python, this demonstrates deep understanding of network protocols and reliable data transmission techniques.
-                                </p>
-                            </div>
-
-                            <a href="https://github.com/koderAP/TCP-Like-UDP" target="_blank" class="btn">Check it Out</a>
-                        </div>
-
-                        <div class="project-card" >
-                            <img src="./images/projects/ds-coin.jpg" alt="disaster-classification" loading="lazy" class="project-pic"/>
-                            <div class="details">    
-                                <h2 class="project-title">Disaster Classification System</h2>
-                                <p class="project-details">
-                                    A machine learning system for automated disaster classification using computer vision and deep learning techniques. Built using Jupyter Notebooks with comprehensive data analysis and model development workflows.
-                                    <br><br>
-                                    The system employs convolutional neural networks (CNNs) for image classification, data preprocessing pipelines, and performance evaluation metrics. Features extensive exploratory data analysis and model optimization techniques for accurate disaster type identification.
-                                </p>
-                            </div>
-
-                            <a href="https://github.com/koderAP/DisasterClassification" target="_blank" class="btn">Check it Out</a>
-                        </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Technologies</div>
                     </div>
-
-                    <div class="projects-container">
-                        <div class="project-card" >
-                            <img src="./images/projects/tux-pink.jpg" alt="terminal-algos" loading="lazy" class="project-pic"/>
-                            <div class="details">    
-                                <h2 class="project-title">Terminal-Based Algorithm Visualizer</h2>
-                                <p class="project-details">
-                                    An interactive terminal application for visualizing and understanding various algorithms and data structures. Built with Python, featuring real-time algorithm execution visualization and educational tools.
-                                    <br><br>
-                                    The application includes implementations of sorting algorithms, graph traversal methods, and data structure operations with step-by-step visualization. Features customizable visualization speed, algorithm comparison tools, and educational content for learning computer science concepts.
-                                </p>
-                            </div>
-
-                            <a href="https://github.com/koderAP/Terminal-Algos" target="_blank" class="btn">Check it Out</a>
-                        </div>
-
-                        <div class="project-card" >
-                            <img src="./images/projects/google.png" alt="col226-assignments" loading="lazy" class="project-pic"/>
-                            <div class="details">    
-                                <h2 class="project-title">Functional Programming with OCaml</h2>
-                                <p class="project-details">
-                                    A comprehensive collection of assignments from COL226 (Programming Languages) course at IIT Delhi, featuring advanced functional programming concepts implemented in OCaml.
-                                    <br><br>
-                                    The repository contains 8 complete assignments covering topics like type systems, lambda calculus, interpreters, and advanced functional programming paradigms. Demonstrates proficiency in functional programming concepts and language theory.
-                                </p>
-                            </div>
-
-                            <a href="https://github.com/koderAP/COL226-Assignments" target="_blank" class="btn">Check it Out</a>
-                        </div>
-
-                        <div class="project-card" >
-                            <img src="./images/projects/ann.png" alt="arcade-games" loading="lazy" class="project-pic"/>
-                            <div class="details">    
-                                <h2 class="project-title">ARCADE - Game Development Suite</h2>
-                                <p class="project-details">
-                                    A comprehensive game development project featuring multiple arcade-style games built with Python. Demonstrates game design principles, graphics programming, and interactive entertainment development.
-                                    <br><br>
-                                    The suite includes various classic arcade games with modern implementations, featuring physics engines, collision detection, score systems, and engaging gameplay mechanics. Built using Python game development libraries with emphasis on clean code architecture.
-                                </p>
-                            </div>
-
-                            <a href="https://github.com/koderAP/ARCADE" target="_blank" class="btn">Check it Out</a>
-                        </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Commitment</div>
                     </div>
                 </div>
-
-                <div id="contact"></div>
-                <div class="contact">
-                    <h1>Get In Touch</h1>
-                    <div class="contact-content">
-                        <div class="contact-info">
-                            <p>I'm always interested in discussing new opportunities, collaborating on exciting projects, or just having a conversation about technology, systems programming, or AI. Feel free to reach out!</p>
-                            <div class="contact-methods">
-                                <div class="contact-method">
-                                    <img src="./images/icons/mail-icon.png" class="contact-icon" alt="Email">
-                                    <a href="mailto:apiitb01@gmail.com">apiitb01@gmail.com</a>
-                                </div>
-                                <div class="contact-method">
-                                    <img src="./images/icons/github-icon.png" class="contact-icon" alt="GitHub">
-                                    <a href="https://github.com/koderAP" target="_blank">github.com/koderAP</a>
-                                </div>
-                                <div class="contact-method">
-                                    <img src="./images/icons/linkedin-icon.png" class="contact-icon" alt="LinkedIn">
-                                    <a href="https://linkedin.com/in/anubhav-pandey" target="_blank">LinkedIn Profile</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <hr>
-
-                <div class="footer">
-                    <footer>Copyright &copy; 2025 Anubhav Pandey</footer>
-                </div>
-
             </div>
         </div>
+    </section>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-        <script src="./scripts.js"></script>
-    </body>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">My Work</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-description">
+                    A collection of my best work showcasing various technologies and problem-solving approaches.
+                </p>
+            </div>
+            
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="system">System Programming</button>
+                <button class="filter-btn" data-filter="ai">AI/ML</button>
+                <button class="filter-btn" data-filter="parallel">Parallel Computing</button>
+                <button class="filter-btn" data-filter="networking">Networking</button>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Linux Kernel Gang Scheduler -->
+                <div class="project-card" data-category="system">
+                    <div class="project-image">
+                        <img src="images/projects/tux.png" alt="Linux Kernel Gang Scheduler" class="project-img">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/koderAP/Linux-Kernel-Gang-Scheduler" target="_blank" rel="noopener" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://github.com/koderAP/Linux-Kernel-Gang-Scheduler" target="_blank" rel="noopener" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">C</span>
+                            <span class="tech-tag">Linux Kernel</span>
+                            <span class="tech-tag">Scheduling Algorithms</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Linux Kernel Gang Scheduler</h3>
+                        <p class="project-description">
+                            Advanced implementation of gang scheduling algorithm in Linux kernel, enabling 
+                            coordinated scheduling of parallel processes for improved system performance 
+                            and reduced context switching overhead in multi-core environments.
+                        </p>
+                        <div class="project-features">
+                            <span class="feature-tag">Gang Scheduling</span>
+                            <span class="feature-tag">Kernel Development</span>
+                            <span class="feature-tag">Performance Optimization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Havannah Game AI -->
+                <div class="project-card" data-category="ai">
+                    <div class="project-image">
+                        <img src="images/projects/havanah.png" alt="Havannah Game AI Agent" class="project-img">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/koderAP/Havannah-Game-AI-Agent" target="_blank" rel="noopener" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://github.com/koderAP/Havannah-Game-AI-Agent" target="_blank" rel="noopener" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">AI</span>
+                            <span class="tech-tag">Game Theory</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Havannah Game AI Agent</h3>
+                        <p class="project-description">
+                            Sophisticated AI implementation using Monte Carlo Tree Search, minimax algorithms, 
+                            and heuristic evaluation functions for competitive Havannah gameplay.
+                        </p>
+                        <div class="project-features">
+                            <span class="feature-tag">MCTS Algorithm</span>
+                            <span class="feature-tag">Game AI</span>
+                            <span class="feature-tag">Alpha-Beta Pruning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Smart Block Device Driver -->
+                <div class="project-card" data-category="system">
+                    <div class="project-image">
+                        <img src="images/projects/device-driver.png" alt="Smart Block Device Driver" class="project-img">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/koderAP/Smart-Block-Device-Driver" target="_blank" rel="noopener" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://github.com/koderAP/Smart-Block-Device-Driver" target="_blank" rel="noopener" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">C</span>
+                            <span class="tech-tag">Linux Kernel</span>
+                            <span class="tech-tag">Device Drivers</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Smart Block Device Driver</h3>
+                        <p class="project-description">
+                            Sophisticated Linux kernel module implementing intelligent caching mechanisms 
+                            and performance optimization for block-level data management.
+                        </p>
+                        <div class="project-features">
+                            <span class="feature-tag">Block Device</span>
+                            <span class="feature-tag">Intelligent Caching</span>
+                            <span class="feature-tag">Performance Optimization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SDN with Ryu -->
+                <div class="project-card" data-category="networking">
+                    <div class="project-image">
+                        <img src="images/projects/google.png" alt="Software Defined Networking with Ryu" class="project-img">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/koderAP/SDN-with-RYU" target="_blank" rel="noopener" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://github.com/koderAP/SDN-with-RYU" target="_blank" rel="noopener" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SDN</span>
+                            <span class="tech-tag">Networking</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Software Defined Networking with Ryu</h3>
+                        <p class="project-description">
+                            Implementation of SDN controller using Ryu framework for programmable network management, 
+                            traffic engineering, and dynamic network control.
+                        </p>
+                        <div class="project-features">
+                            <span class="feature-tag">SDN Controller</span>
+                            <span class="feature-tag">Network Programming</span>
+                            <span class="feature-tag">Traffic Control</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Socket Programming C++ -->
+                <div class="project-card" data-category="parallel">
+                    <div class="project-image">
+                        <img src="images/projects/mergesort.jpg" alt="Socket Programming in C++" class="project-img">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/koderAP/Socket-programing-cpp" target="_blank" rel="noopener" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://github.com/koderAP/Socket-programing-cpp" target="_blank" rel="noopener" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Socket Programming</span>
+                            <span class="tech-tag">Network Communication</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Socket Programming in C++</h3>
+                        <p class="project-description">
+                            Comprehensive implementation of socket programming concepts in C++, featuring 
+                            client-server architecture, multi-threaded communication, and efficient 
+                            network protocol handling for robust distributed applications.
+                        </p>
+                        <div class="project-features">
+                            <span class="feature-tag">Client-Server Architecture</span>
+                            <span class="feature-tag">Multi-threading</span>
+                            <span class="feature-tag">Network Protocols</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TCP-Like-UDP -->
+                <div class="project-card" data-category="networking">
+                    <div class="project-image">
+                        <img src="images/projects/kws.jpg" alt="TCP-Like-UDP Implementation" class="project-img">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/koderAP/TCP-Like-UDP" target="_blank" rel="noopener" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://github.com/koderAP/TCP-Like-UDP" target="_blank" rel="noopener" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Network Programming</span>
+                            <span class="tech-tag">Protocol Design</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">TCP-Like-UDP Implementation</h3>
+                        <p class="project-description">
+                            Custom implementation of reliable communication protocol over UDP, featuring 
+                            TCP-like functionality including flow control, congestion control, and 
+                            error detection mechanisms for robust network communication.
+                        </p>
+                        <div class="project-features">
+                            <span class="feature-tag">Reliable Communication</span>
+                            <span class="feature-tag">Flow Control</span>
+                            <span class="feature-tag">Protocol Implementation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Disaster Classification -->
+                <div class="project-card" data-category="ai">
+                    <div class="project-image">
+                        <img src="images/projects/ann.png" alt="Disaster Classification" class="project-img">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/koderAP/DisasterClassification" target="_blank" rel="noopener" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://github.com/koderAP/DisasterClassification" target="_blank" rel="noopener" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Data Science</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Disaster Classification</h3>
+                        <p class="project-description">
+                            Machine learning model for automated classification of disaster types from textual data 
+                            and social media posts. Implements natural language processing techniques and deep learning 
+                            for accurate emergency response classification.
+                        </p>
+                        <div class="project-features">
+                            <span class="feature-tag">NLP</span>
+                            <span class="feature-tag">Text Classification</span>
+                            <span class="feature-tag">Emergency Response</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terminal Algorithms -->
+                <div class="project-card" data-category="system">
+                    <div class="project-image">
+                        <img src="images/projects/interval.png" alt="Terminal Algorithms" class="project-img">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/koderAP/Terminal-Algos" target="_blank" rel="noopener" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://github.com/koderAP/Terminal-Algos" target="_blank" rel="noopener" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Algorithms</span>
+                            <span class="tech-tag">Data Structures</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Terminal Algorithms</h3>
+                        <p class="project-description">
+                            Implementation of various fundamental algorithms and data structures in Python. 
+                            Features sorting algorithms, graph algorithms, and advanced data structure implementations 
+                            with optimized performance and clear code documentation.
+                        </p>
+                        <div class="project-features">
+                            <span class="feature-tag">Algorithm Implementation</span>
+                            <span class="feature-tag">Data Structures</span>
+                            <span class="feature-tag">Performance Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="projects-cta">
+                <p>Want to see more projects?</p>
+                <a href="https://github.com/koderAP" target="_blank" rel="noopener" class="btn btn-outline">
+                    <i class="fab fa-github"></i>
+                    View All on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Technical Skills</span>
+                <h2 class="section-title">Technologies & Expertise</h2>
+                <p class="section-description">
+                    A comprehensive overview of my technical skills across various domains including system programming, networking, and artificial intelligence.
+                </p>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Programming Languages</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Python</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">C/C++</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Java</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">OCaml</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Parallel & Distributed Computing</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">OpenMP</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">MPI</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">CUDA</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Pthread</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3>System & DevOps</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Linux Kernel</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Docker</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Git/GitHub</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI & Machine Learning</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">TensorFlow</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">PyTorch</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">OpenCV</span>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Scikit-learn</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Journey</span>
+                <h2 class="section-title">Experience & Education</h2>
+                <p class="section-description">
+                    My professional journey and educational background in technology and computer science.
+                </p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Summer 2023</div>
+                        <h3>Software Engineering Intern</h3>
+                        <h4>Tech Company / Research Lab</h4>
+                        <p>
+                            Worked on optimizing system performance and developing efficient algorithms for 
+                            large-scale distributed systems. Contributed to kernel-level improvements and 
+                            parallel computing optimizations.
+                        </p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">System Performance</span>
+                            <span class="skill-tag">Distributed Systems</span>
+                            <span class="skill-tag">Algorithm Optimization</span>
+                            <span class="skill-tag">Performance Analysis</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - 2023</div>
+                        <h3>Research Assistant</h3>
+                        <h4>IIT Delhi Computer Science Department</h4>
+                        <p>
+                            Conducted research on parallel computing algorithms and system optimization under 
+                            faculty guidance. Published research papers and contributed to academic projects 
+                            focusing on high-performance computing.
+                        </p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">Academic Research</span>
+                            <span class="skill-tag">High Performance Computing</span>
+                            <span class="skill-tag">Technical Writing</span>
+                            <span class="skill-tag">Algorithm Design</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020 - 2024</div>
+                        <h3>Bachelor of Technology</h3>
+                        <h4>Computer Science & Engineering, IIT Delhi</h4>
+                        <p>
+                            Comprehensive study of computer science fundamentals including algorithms, 
+                            data structures, operating systems, and parallel computing. Specialized 
+                            in Linux kernel programming and machine learning systems.
+                        </p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">Data Structures & Algorithms</span>
+                            <span class="skill-tag">Operating Systems</span>
+                            <span class="skill-tag">Parallel Computing</span>
+                            <span class="skill-tag">Machine Learning</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - Present</div>
+                        <h3>Open Source Contributor</h3>
+                        <h4>Various Projects</h4>
+                        <p>
+                            Active contributor to open source projects, focusing on Linux kernel development, 
+                            system programming tools, and machine learning libraries. Contributed to improving 
+                            performance and adding new features.
+                        </p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">Linux Kernel</span>
+                            <span class="skill-tag">Open Source</span>
+                            <span class="skill-tag">Collaboration</span>
+                            <span class="skill-tag">Code Review</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021 - Present</div>
+                        <h3>Research & Personal Projects</h3>
+                        <h4>System Programming & AI Research</h4>
+                        <p>
+                            Developed 20+ projects ranging from Linux kernel modules and device drivers 
+                            to AI systems and parallel computing applications. Focus on low-level systems 
+                            programming and high-performance computing solutions.
+                        </p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">Linux Kernel Development</span>
+                            <span class="skill-tag">Parallel Computing</span>
+                            <span class="skill-tag">AI Research</span>
+                            <span class="skill-tag">Performance Optimization</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020 - Present</div>
+                        <h3>Technical Achievements</h3>
+                        <h4>Competitions & Recognition</h4>
+                        <p>
+                            Participated in various programming competitions, hackathons, and technical challenges. 
+                            Recognized for innovative solutions in system programming and machine learning domains.
+                        </p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">Competitive Programming</span>
+                            <span class="skill-tag">Hackathons</span>
+                            <span class="skill-tag">Innovation</span>
+                            <span class="skill-tag">Recognition</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Let's Work Together</h2>
+                <p class="section-description">
+                    I'm always interested in new opportunities and exciting projects. 
+                    Let's discuss how we can create something amazing together.
+                </p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>Professional Contact</p>
+                            <a href="mailto:apiitb01@gmail.com" class="contact-link">Send a message</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <p>Professional Network</p>
+                            <a href="https://www.linkedin.com/in/anubhavpandeyiitd/" target="_blank" rel="noopener" class="contact-link">Connect with me</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>GitHub</h3>
+                            <p>Code Repository</p>
+                            <a href="https://github.com/koderAP" target="_blank" rel="noopener" class="contact-link">View my work</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Open to Remote & On-site</p>
+                            <span class="contact-link">Available Worldwide</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a topic</option>
+                            <option value="job">Job Opportunity</option>
+                            <option value="project">Project Collaboration</option>
+                            <option value="consultation">Technical Consultation</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project or opportunity..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Anubhav Pandey</h3>
+                    <p>System Programmer & AI Enthusiast</p>
+                    <div class="footer-social">
+                        <a href="https://github.com/koderAP" target="_blank" rel="noopener" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/anubhavpandeyiitd/" target="_blank" rel="noopener" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:apiitb01@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://twitter.com/koderAP" target="_blank" rel="noopener" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#skills">Skills</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="https://github.com/koderAP" target="_blank" rel="noopener">GitHub</a></li>
+                            <li><a href="https://www.linkedin.com/in/anubhavpandeyiitd/" target="_blank" rel="noopener">LinkedIn</a></li>
+                            <li><a href="mailto:apiitb01@gmail.com">Email</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Anubhav Pandey. All rights reserved.</p>
+                <p>Built with ❤️ using modern web technologies</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

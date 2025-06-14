@@ -31,7 +31,7 @@ This portfolio features:
 
 - **Email**: apiitb01@gmail.com
 - **GitHub**: [koderAP](https://github.com/koderAP)
-- **LinkedIn**: Connect with me for professional opportunities
+- **LinkedIn**: [anubhavpandeyiitd](https://www.linkedin.com/in/anubhavpandeyiitd/)
 
 ## License
 
