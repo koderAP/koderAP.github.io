@@ -1,6 +1,8 @@
-# Anubhav Pandey - Portfolio Website
+# koderAP.github.io
 
-A modern, responsive portfolio website showcasing my projects, skills, and experience as a Computer Science student at IIT Delhi.
+Personal portfolio website for **Anubhav Pandey** - Computer Science student at IIT Delhi.
+
+🌐 **Live Website**: https://koderap.github.io
 
 ## About
 
