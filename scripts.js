@@ -283,7 +283,7 @@ function initProjectFilters() {
 function initContactForm() {
     const contactForm = document.querySelector('.contact-form');
     
-    contactForm?.addEventListener('submit', (e) => {
+    contactForm?.addEventListener('submit', async (e) => {
         e.preventDefault();
         
         // Get form data
@@ -291,10 +291,11 @@ function initContactForm() {
         const name = formData.get('name');
         const email = formData.get('email');
         const message = formData.get('message');
+        const subject = formData.get('subject');
         
         // Simple validation
-        if (!name || !email || !message) {
-            showNotification('Please fill in all fields', 'error');
+        if (!name || !email || !message || !subject) {
+            showNotification('Please fill in all required fields', 'error');
             return;
         }
         
@@ -303,9 +304,35 @@ function initContactForm() {
             return;
         }
         
-        // Simulate form submission
-        showNotification('Message sent successfully!', 'success');
-        contactForm.reset();
+        // Show loading state
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+        
+        try {
+            // Submit to Formspree
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+                contactForm.reset();
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            showNotification('Failed to send message. Please try again or contact me directly at apiitb01@gmail.com', 'error');
+        } finally {
+            // Restore button state
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }
     });
 }
 
