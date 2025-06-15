@@ -1,6 +1,13 @@
 // Modern Portfolio JavaScript - Beautiful Interactions
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Apply theme immediately to prevent flash
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    // Ensure hero elements are visible immediately
+    ensureHeroVisibility();
+    
     // Initialize all components
     initNavigation();
     initThemeToggle();
@@ -12,6 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initScrollToTop();
     initSkillBars(); // Add this line
+    initAboutNavigation(); // Add about card navigation
+    initTechSlider(); // Add technologies slider
+    initTechSlider(); // Initialize tech slider
+    
+    // Apply initial theme styles
+    applyNavbarTheme(savedTheme);
     
     // Performance optimization - only run animations if user prefers them
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -19,6 +32,28 @@ document.addEventListener('DOMContentLoaded', function() {
         // Removed annoying mouse tracker
     }
 });
+
+// Ensure hero section elements are always visible
+function ensureHeroVisibility() {
+    const heroElements = document.querySelectorAll('.hero-content, .hero-text, .hero-buttons, .hero-social, .hero-image');
+    heroElements.forEach(element => {
+        if (element) {
+            element.style.opacity = '1';
+            element.style.visibility = 'visible';
+            element.style.display = element.style.display || '';
+        }
+    });
+    
+    // Double-check after a short delay
+    setTimeout(() => {
+        heroElements.forEach(element => {
+            if (element) {
+                element.style.opacity = '1';
+                element.style.visibility = 'visible';
+            }
+        });
+    }, 100);
+}
 
 // Navigation Functionality
 function initNavigation() {
@@ -63,9 +98,12 @@ function initThemeToggle() {
     const themeToggle = document.querySelector('.theme-toggle');
     const currentTheme = localStorage.getItem('theme') || 'light';
     
-    // Set initial theme
+    // Set initial theme immediately to prevent flash
     document.documentElement.setAttribute('data-theme', currentTheme);
     updateThemeIcon(currentTheme);
+    
+    // Apply theme-specific navbar styles immediately
+    applyNavbarTheme(currentTheme);
     
     themeToggle?.addEventListener('click', () => {
         const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -74,6 +112,7 @@ function initThemeToggle() {
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         updateThemeIcon(newTheme);
+        applyNavbarTheme(newTheme);
     });
 }
 
@@ -81,6 +120,19 @@ function updateThemeIcon(theme) {
     const themeIcon = document.querySelector('.theme-toggle i');
     if (themeIcon) {
         themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+}
+
+function applyNavbarTheme(theme) {
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        if (theme === 'dark') {
+            navbar.style.background = 'rgba(26, 26, 26, 0.95)';
+            navbar.style.borderBottomColor = '#4a4a4a';
+        } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.borderBottomColor = '#ffd7cc';
+        }
     }
 }
 
@@ -100,13 +152,16 @@ function initScrollAnimations() {
         });
     }, observerOptions);
     
-    // Observe all animated elements
+    // Observe all animated elements (excluding hero section elements)
     const animatedElements = document.querySelectorAll('.project-card, .skill-category, .timeline-item, .contact-method');
     animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-        observer.observe(el);
+        // Only apply scroll animations to elements not in the hero section
+        if (!el.closest('.hero')) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            observer.observe(el);
+        }
     });
 }
 
@@ -318,6 +373,350 @@ function initSkillBars() {
     if (skillsSection) {
         observer.observe(skillsSection);
     }
+}
+
+// About Cards Navigation
+function initAboutNavigation() {
+    console.log('🔍 Initializing about navigation...');
+    const prevBtn = document.querySelector('.about-nav-prev');
+    const nextBtn = document.querySelector('.about-nav-next');
+    const cardsWrapper = document.querySelector('.about-cards-wrapper');
+    const cardsContainer = document.querySelector('.about-cards-container');
+    const indicators = document.querySelectorAll('.about-indicator');
+    
+    console.log('📋 Found elements:', {
+        prevBtn: !!prevBtn,
+        nextBtn: !!nextBtn,
+        cardsWrapper: !!cardsWrapper,
+        cardsContainer: !!cardsContainer,
+        indicatorsCount: indicators.length
+    });
+    
+    if (!prevBtn || !nextBtn || !cardsWrapper || !cardsContainer) {
+        console.error('❌ Missing required elements for about navigation');
+        return;
+    }
+    
+    console.log('✅ About navigation initialized successfully!');
+    
+    let currentIndex = 0;
+    const totalCards = 3;
+    let isManualNavigation = false;
+    
+    // Function to update indicators
+    function updateIndicators(activeIndex) {
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === activeIndex);
+        });
+    }
+    
+    // Function to update card position manually
+    function updateCardPosition(index, animate = true) {
+        console.log(`🎯 Moving to card ${index}`);
+        
+        // Pause the automatic animation
+        cardsWrapper.style.animationPlayState = 'paused';
+        isManualNavigation = true;
+        
+        // Calculate the transform (each card is 33.33%)
+        const percentage = -(index * 33.33);
+        
+        if (animate) {
+            cardsWrapper.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        } else {
+            cardsWrapper.style.transition = 'none';
+        }
+        
+        cardsWrapper.style.transform = `translateX(${percentage}%)`;
+        currentIndex = index;
+        updateIndicators(index);
+        
+        // Resume automatic animation after a delay
+        clearTimeout(cardsWrapper.resumeTimeout);
+        cardsWrapper.resumeTimeout = setTimeout(() => {
+            if (!cardsContainer.matches(':hover')) {
+                console.log('🔄 Resuming automatic animation');
+                isManualNavigation = false;
+                cardsWrapper.style.transition = '';
+                cardsWrapper.style.animationPlayState = 'running';
+            }
+        }, 4000); // 4 second delay before resuming
+    }
+    
+    // Navigation functions
+    function goToPrev() {
+        const newIndex = currentIndex === 0 ? totalCards - 1 : currentIndex - 1;
+        updateCardPosition(newIndex);
+    }
+    
+    function goToNext() {
+        const newIndex = currentIndex === totalCards - 1 ? 0 : currentIndex + 1;
+        updateCardPosition(newIndex);
+    }
+    
+    function goToIndex(index) {
+        if (index !== currentIndex) {
+            updateCardPosition(index);
+        }
+    }
+    
+    // Pause animation on hover
+    cardsContainer.addEventListener('mouseenter', () => {
+        if (!isManualNavigation) {
+            cardsWrapper.style.animationPlayState = 'paused';
+        }
+    });
+    
+    cardsContainer.addEventListener('mouseleave', () => {
+        if (!isManualNavigation) {
+            cardsWrapper.style.animationPlayState = 'running';
+        }
+    });
+    
+    // Add button event listeners
+    prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        goToPrev();
+    });
+    
+    nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        goToNext();
+    });
+    
+    // Add indicator event listeners
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', (e) => {
+            e.preventDefault();
+            goToIndex(index);
+        });
+    });
+    
+    // Add keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        // Only trigger if the about section is in view or focused
+        const aboutSection = document.querySelector('#about');
+        const rect = aboutSection.getBoundingClientRect();
+        const isInView = rect.top <= window.innerHeight && rect.bottom >= 0;
+        
+        if (isInView && !e.target.matches('input, textarea, select')) {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                goToPrev();
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                goToNext();
+            } else if (e.key >= '1' && e.key <= '3') {
+                e.preventDefault();
+                goToIndex(parseInt(e.key) - 1);
+            }
+        }
+    });
+    
+    // Add touch support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    cardsContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    cardsContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                goToNext(); // Swipe left = next
+            } else {
+                goToPrev(); // Swipe right = previous
+            }
+        }
+    }
+    
+    // Initialize indicators
+    updateIndicators(0);
+}
+
+// Technologies Slider Navigation
+function initTechSlider() {
+    console.log('🔍 Initializing tech slider...');
+    const prevBtn = document.querySelector('.tech-nav-prev');
+    const nextBtn = document.querySelector('.tech-nav-next');
+    const sliderWrapper = document.querySelector('.tech-slider-wrapper');
+    const sliderContainer = document.querySelector('.tech-slider-container');
+    const indicators = document.querySelectorAll('.tech-indicator');
+    
+    console.log('📋 Found tech slider elements:', {
+        prevBtn: !!prevBtn,
+        nextBtn: !!nextBtn,
+        sliderWrapper: !!sliderWrapper,
+        sliderContainer: !!sliderContainer,
+        indicatorsCount: indicators.length
+    });
+    
+    if (!prevBtn || !nextBtn || !sliderWrapper || !sliderContainer) {
+        console.error('❌ Missing required elements for tech slider');
+        return;
+    }
+    
+    console.log('✅ Tech slider initialized successfully!');
+    
+    let currentSlide = 0;
+    const totalSlides = 6; // Total number of slides
+    let isAutoSliding = true;
+    let autoSlideInterval;
+    
+    // Function to update indicators
+    function updateIndicators(activeIndex) {
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === activeIndex);
+        });
+    }
+    
+    // Function to update slide position
+    function updateSlidePosition(index, animate = true) {
+        console.log(`🎯 Moving to slide ${index}`);
+        
+        // Stop auto-sliding when manually navigated
+        stopAutoSlide();
+        
+        // Calculate the transform (each slide is 16.67% = 100/6)
+        const percentage = -(index * (100/6));
+        
+        if (animate) {
+            sliderWrapper.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        } else {
+            sliderWrapper.style.transition = 'none';
+        }
+        
+        sliderWrapper.style.transform = `translateX(${percentage}%)`;
+        currentSlide = index;
+        updateIndicators(index);
+        
+        // Resume auto-sliding after a delay
+        setTimeout(() => {
+            if (!sliderContainer.matches(':hover')) {
+                startAutoSlide();
+            }
+        }, 4000);
+    }
+    
+    // Auto-slide functionality
+    function startAutoSlide() {
+        if (isAutoSliding) return;
+        isAutoSliding = true;
+        autoSlideInterval = setInterval(() => {
+            const nextIndex = currentSlide === totalSlides - 1 ? 0 : currentSlide + 1;
+            updateSlidePosition(nextIndex);
+        }, 4000); // Change slide every 4 seconds
+    }
+    
+    function stopAutoSlide() {
+        isAutoSliding = false;
+        clearInterval(autoSlideInterval);
+    }
+    
+    // Navigation functions
+    function goToPrev() {
+        const newIndex = currentSlide === 0 ? totalSlides - 1 : currentSlide - 1;
+        updateSlidePosition(newIndex);
+    }
+    
+    function goToNext() {
+        const newIndex = currentSlide === totalSlides - 1 ? 0 : currentSlide + 1;
+        updateSlidePosition(newIndex);
+    }
+    
+    function goToSlide(index) {
+        if (index >= 0 && index < totalSlides) {
+            updateSlidePosition(index);
+        }
+    }
+    
+    // Event listeners
+    prevBtn.addEventListener('click', goToPrev);
+    nextBtn.addEventListener('click', goToNext);
+    
+    // Indicator click events
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => goToSlide(index));
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (document.activeElement && document.activeElement.closest('.tech-slider-container')) {
+            switch(e.key) {
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    goToPrev();
+                    break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    goToNext();
+                    break;
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                case '5':
+                case '6':
+                    e.preventDefault();
+                    goToSlide(parseInt(e.key) - 1);
+                    break;
+            }
+        }
+    });
+    
+    // Pause auto-slide on hover
+    sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+    sliderContainer.addEventListener('mouseleave', () => {
+        setTimeout(startAutoSlide, 1000);
+    });
+    
+    // Touch/swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    sliderContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoSlide();
+    });
+    
+    sliderContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        setTimeout(() => {
+            if (!sliderContainer.matches(':hover')) {
+                startAutoSlide();
+            }
+        }, 2000);
+    });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                // Swiped left, go to next slide
+                goToNext();
+            } else {
+                // Swiped right, go to previous slide
+                goToPrev();
+            }
+        }
+    }
+    
+    // Initialize auto-sliding
+    setTimeout(startAutoSlide, 2000);
+    
+    console.log('🎉 Tech slider fully configured with auto-slide, navigation, and touch support!');
 }
 
 // Utility Functions
