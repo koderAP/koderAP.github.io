@@ -1430,6 +1430,34 @@ section {
     width: 100%;
 }
 
+/* Horizontal Footer Navigation */
+.footer-nav-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.footer-nav-horizontal a {
+    color: #a0aec0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-nav-horizontal a:hover {
+    color: var(--primary-color);
+    background: rgba(255, 120, 73, 0.1);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 1.5rem;
